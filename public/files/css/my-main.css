@@ -1,0 +1,306 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+
+#mainForm {
+    position: relative;
+}
+
+#sepiraLogo {
+    width: 5rem;
+    position: absolute;
+    left: 2rem;
+    top: 1.5rem
+}
+
+#header {
+    background-color: #000050;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+input {
+    text-align: center;
+    z-index: 0;
+}
+
+#panelContainer {
+    width: 55%;
+}
+
+
+#inputContainer {
+    display: none;
+    justify-content: space-between;
+}
+
+#orgNameContainer {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+
+.dataInput {
+    cursor: context-menu;
+}
+
+.input {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+
+.myContainer {
+    position: relative;
+}
+
+.downArrow {
+    width: 20px;
+    position: absolute;
+    top: 1.25rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.dropdown {
+    background-color: #e4e4e4;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+    overflow: auto;
+    display: none;
+}
+
+.dropdown a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 0.4rem;
+    color: black;
+}
+
+.dropdown a:hover {
+    background-color: #b1afaf;
+    color: white;
+}
+
+
+#minterOrgContainer, #minterUser, #mintAmount {
+    display: none;
+}
+
+
+#addReceiverBtn {
+    width: 40%;
+    background-color: #f68114;
+    padding: 5px 10px;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#addReceiverBtn:hover{
+    background-color: #d47012;
+}
+
+
+#receiversTableContainer {
+    width: 100%;
+    margin: 20px auto;
+    display: none;
+    width: 100%;
+}
+
+#receiversTable {
+    width: 100%;
+}
+
+
+#utxoTableLastLine td {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#utxoTableLastLine td:nth-child(1) {
+    border-bottom-left-radius: 1rem;
+}
+#utxoTableLastLine td:nth-child(2) {
+    border-bottom-right-radius: 1rem;
+}
+
+
+.tableBody tr:hover .removeIcon, td.removeBtnCol:hover  .removeIcon{
+    visibility: visible;
+}
+
+.removeIcon, .editIcon {
+    width: 1.5rem;
+    cursor: pointer;
+    visibility: hidden; 
+}
+
+
+.removeBtnCol, .editBtnCol {
+    background-color: white !important;
+}
+
+
+.queryTypeBtn {
+    width: auto;
+    cursor: pointer;
+    background-color: #cccbcb;
+}
+
+#registerEnrollBtn {
+    background-color: #f68114;
+}
+
+
+#submitBtn, #abortBtn {
+    margin-bottom: 30px;
+}
+
+#submitBtn {
+    background-color: #191966;
+}
+
+#submitBtn:hover {
+    background-color: #000050;
+}
+
+
+.container {
+    max-width: 90% !important;
+}
+
+.myTable {
+    max-width: 20%;
+    margin: auto;
+}
+
+.myTable thead tr th,
+.myTable tbody tr td {
+    width: auto;
+    text-align: center;
+    padding: 10px 10px !important;
+    word-wrap: break-word;
+}
+
+
+#receiverFirstLine th, #utxoFirstLine th {
+    color: white;
+    background-color: #000050;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#receiverFirstLine th:nth-child(2) {
+    border-top-left-radius: 1rem;
+}
+
+#receiverFirstLine th:nth-child(4) {
+    border-top-right-radius: 1rem;
+}
+
+#utxoFirstLine th:nth-child(1) {
+    border-top-left-radius: 1rem;
+}
+
+#utxoFirstLine th:nth-child(2) {
+    border-top-right-radius: 1rem;
+}
+
+.utxoRadioInput {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+#utxoTableContainer {
+    display: none;
+}
+
+
+/* Loadin Animation - start */
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    /* display: block; */
+    display: none;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #57b846;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+/* Loadin Animation - end*/

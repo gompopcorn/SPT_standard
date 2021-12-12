@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Sepira Token</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="./files/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./files/css/util.css">
+	<link rel="stylesheet" type="text/css" href="./files/css/main.css">
+	<!--===============================================================================================-->
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="./files/css/style.css">
+	
+	<link rel="stylesheet" type="text/css" href="./files/css/my-main.css">
+
+</head>
+
+<body>
+
+	<div class="limiter">
+
+		<div class="container-login100">
+
+			<div id="panelContainer" class="wrap-login100" style="margin-top: 20px;">
+
+				<form id="mainForm" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+
+					<span id="header" class="login100-form-title">
+						<img src="./files/images/sepira.png" alt="sepira-logo" id="sepiraLogo">
+						Sepira Token
+					</span>
+
+
+					<!-- **************************************************************** -->
+					<!-- 							Header Buttons 						  -->
+					<!-- **************************************************************** -->
+
+					<!-- Header Buttons Section -->
+					<div style="display: flex; justify-content: space-around;">
+
+						<div id="registerEnrollBtn" class="login100-form-btn queryTypeBtn" enabled="true">
+							Register & Enroll
+						</div>
+
+						<div id="mintTokenBtn" class="login100-form-btn queryTypeBtn" enabled="false">
+							Mint Tokens
+						</div>
+
+						<div id="transfer" class="login100-form-btn queryTypeBtn" enabled="false">
+							Transfer Tokens
+						</div>
+	
+					</div>
+
+					<hr><br>
+
+
+					<!-- **************************************************************** -->
+					<!-- 					Register and Enroll Section 				  -->
+					<!-- **************************************************************** -->
+
+					<!-- Select Sender's Organization -->
+					<div id="orgNameContainer" class="wrap-input100 validate-input m-b-16" is-selected="false">
+
+						<input id="orgNameInput" class="input100" type="text" name="orgName" 
+							placeholder="Select Sender's Organization" title="Sender's Organization" readonly>
+						<span class="focus-input100"></span>
+
+						<img src="./files/images/down-chevron.png" id="downArrowEnrollOrg" class="downArrow">
+
+						<div id="dropdownEnrollOrg" class="dropdown">
+							<a href="#" class="orgEnrollList">Org 1</a>
+							<a href="#" class="orgEnrollList">Org 2</a>
+						</div>
+
+					</div>
+					
+
+					<!-- Register & Enroll Section -->
+					<div id="usernameContainer" class="wrap-input100 validate-input m-b-16 input">
+
+						<input id="usernameInput" class="input100" type="text" name="username" placeholder="User ID" title="User ID">
+						<span class="focus-input100"></span>
+
+					</div>
+
+
+					<!-- **************************************************************** -->
+					<!-- 							Mint Section 						  -->
+					<!-- **************************************************************** -->
+
+					<!-- Minter Organization -->
+					<div id="minterOrgContainer" class="wrap-input100 validate-input m-b-16 input" is-selected="false">
+
+						<input id="mintOrgInput" type="text" class="input100" name="mintOrg" 
+							placeholder="Select Minter's Organization" title="Minter's Organization" value="Org 1" readonly>
+						<span class="focus-input100"></span>
+
+					</div>
+					
+
+					<!-- Minter User -->
+					<div id="minterUser" class="wrap-input100 validate-input m-b-16 myContainer input" is-selected="false">
+
+						<input id="mintUserInput" class="input100 dataInput" type="text" name="mintUser" 
+							placeholder="Minter" title="Minter" readonly>
+						<span class="focus-input100"></span>
+
+						<img src="./files/images/down-chevron.png" id="downArrowMinter" class="downArrow">
+
+						<div id="dropdownMinter" class="dropdown" has-users="false">
+							<a href="#" class="senderUserList" id="selectMinterWarn">Select a user to mint tokens</a>
+						</div>
+
+					</div>
+					
+
+					<!-- Minter Amount -->
+					<div id="mintAmount" class="wrap-input100 validate-input m-b-16 input">
+
+						<input id="mintUserAmount" class="input100" type="text" name="mintAmount" placeholder="Mint Amount" title="Mint Amount">
+						<span class="focus-input100"></span>
+
+					</div>
+
+
+					<!-- **************************************************************** -->
+					<!-- 					   	  Transfer Section 						  -->
+					<!-- **************************************************************** -->
+
+					<!-- Transfer Section -->
+					<div id="inputContainer">
+
+						<!-- left section -->
+						<div>
+	
+							<!-- Select Sender's Organization -->
+							<div id="senderOrgContainer" class="wrap-input100 validate-input m-b-16 myContainer" is-selected="false">
+
+								<input id="senderOrgInput" class="input100 dataInput" type="text" name="senderOrg" 
+									placeholder="Select Sender's Organization" title="Sender's Organization" readonly>
+								<span class="focus-input100"></span>
+
+								<img src="./files/images/down-chevron.png" id="downArrowOrg" class="downArrow">
+
+								<div id="dropdownOrg" class="dropdown">
+									<a href="#" class="orgList">Org 1</a>
+									<a href="#" class="orgList">Org 2</a>
+								</div>
+
+							</div>
+
+
+							<!-- Select Sender User -->
+							<div id="senderUserContainer" class="wrap-input100 validate-input m-b-16 myContainer" is-selected="false">
+
+								<input id="senderUserInput" class="input100 dataInput" type="text" name="senderUser" 
+									placeholder="Select Sender" title="Sender User" readonly>
+								<span class="focus-input100"></span>
+
+								<img src="./files/images/down-chevron.png" id="downArrowUser" class="downArrow">
+
+								<div id="dropdownUser" class="dropdown" has-users="false">
+									<a href="#" class="senderUserList" id="selectUserWarn">Select organization to get users list</a>
+								</div>
+
+							</div>
+
+						</div>
+	
+
+						<!-- right section -->
+						<div>
+							
+							<!-- Select Receiver's Organization -->
+							<div id="receiverOrgContainer" class="wrap-input100 validate-input m-b-16 myContainer" is-selected="false">
+
+								<input id="receiverOrgInput" class="input100 dataInput" type="text" name="receiverOrg" 
+									placeholder="Select Receiver's Organization" title="Receiver's Organization" readonly>
+								<span class="focus-input100"></span>
+
+								<img src="./files/images/down-chevron.png" id="downArrowReceiverOrg" class="downArrow">
+
+								<div id="dropdownReceiverOrg" class="dropdown">
+									<a href="#" class="receiverOrgList">Org 1</a>
+									<a href="#" class="receiverOrgList">Org 2</a>
+								</div>
+
+							</div>
+
+
+							<!-- Select Receiver User -->
+							<div id="receiverUserContainer" class="wrap-input100 validate-input m-b-16 myContainer" is-selected="false">
+
+								<input id="receiverUserInput" class="input100 dataInput" type="text" name="receiverUser" 
+									placeholder="Select Receiver" title="Receiver User" readonly>
+								<span class="focus-input100"></span>
+
+								<img src="./files/images/down-chevron.png" id="downArrowReceiverUser" class="downArrow">
+
+								<div id="dropdownReceiverUser" class="dropdown" has-users="false">
+									<a href="#" class="senderUserList" id="selectReceiverUserWarn">Select organization to get users list</a>
+								</div>
+
+							</div>
+
+
+							<!-- transfer amount -->
+							<div id="transferAmount" class="wrap-input100 validate-input m-b-16 myContainer">
+
+								<input id="transferAmountInput" class="input100" type="text" name="transferAmount" 
+									placeholder="Transfer Amount" title="Transfer Amount">
+								<span class="focus-input100"></span>
+
+							</div>
+
+
+							<!--  add button -->
+							<div id="addReceiverBtn" class="wrap-input100 validate-input m-b-16">
+								Add Receiver
+							</div>
+
+
+						</div>
+
+					</div>
+					
+
+					<!-- Reaceivers Table -->
+					<div class="row" id="receiversTableContainer">
+						<div class="col-md-12">
+							<div class="table-wrap">
+								
+								<table id="receiversTable" class="table table-striped myTable">
+	
+									<thead>
+										<tr id="receiverFirstLine">
+											<th class="editBtnCol"></th>
+											<th>Org Name</th>
+											<th>Username</th>
+											<th>Amount</th>
+											<th class="removeBtnCol"></th>
+										</tr>
+									</thead>
+	
+									<tbody id="receiverTbody" class="tableBody">
+	
+										<!-- <tr>
+											<td class="editBtnCol">
+												<img src="./files/images/edit.png" alt="remove" class="editIcon">
+											</td>
+											<td>org1</td>
+											<td>hamid</td>
+											<td>10000</td>
+											<td class="removeBtnCol">
+												<img src="./files/images/remove.png" alt="remove" class="removeIcon">
+											</td>
+										</tr>
+	
+										<tr>
+											<td class="editBtnCol">
+												<img src="./files/images/edit.png" alt="remove" class="editIcon">
+											</td>
+											<td>org2</td>
+											<td>safoora</td>
+											<td>5000</td>
+											<td class="removeBtnCol">
+												<img src="./files/images/remove.png" alt="remove" class="removeIcon">
+											</td>
+										</tr> -->
+	
+	
+									</tbody>
+	
+								</table>
+	
+							</div>
+						</div>
+					</div>
+
+
+					<br>
+					
+
+					<div class="container-login100-form-btn">
+
+						<button id="submitBtn" class="login100-form-btn">
+							Submit
+						</button>
+
+					</div>
+
+
+					<!-- Loading Animation -->
+					<div id="loading" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+				
+				</form>
+
+			</div>
+
+		</div>
+
+
+
+		<section id="utxoTableContainer" class="ftco-section">
+
+			<div class="container">
+
+				<div class="row justify-content-center">
+
+					<h1 class="heading-section">UTXO List</h1>
+
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-wrap">
+							
+							<table class="table table-striped myTable">
+
+								<thead>
+									<tr id="utxoFirstLine">
+										<th>UTXO Key</th>
+										<th>Amount</th>
+										<!-- <th>#</th> -->
+									</tr>
+								</thead>
+
+								<tbody id="utxoTableBody" class="tableBody"  is-selected="false">
+
+									<!-- <tr>
+										<td>5fd009312d1386da7d4974a1dc66878ad5fdba3496b1400c3da244261383c742.0</td>
+										<td>10000</td>
+										<td>
+											<input type="radio" name="utxo" class="utxoRadioInput">
+										</td>
+									</tr>
+
+									<tr>
+										<td>5fd009312d1386da7d4974a1dc66878ad5fdba3496b1400c3da244261383c742.1</td>
+										<td>5000</td>
+										<td>
+											<input type="radio" name="utxo" class="utxoRadioInput">
+										</td>
+									</tr> -->
+
+
+								</tbody>
+
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+
+	<!--===============================================================================================-->
+	<script src="./files/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="./files/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="./files/vendor/bootstrap/js/popper.js"></script>
+	<script src="./files/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="./files/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="./files/vendor/daterangepicker/moment.min.js"></script>
+	<script src="./files/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="./files/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+
+	<script src="./files/js/jquery.min.js"></script>
+	<script src="./files/js/popper.js"></script>
+	<script src="./files/js/bootstrap.min.js"></script>
+
+	<script src="./files/js/main.js"></script>
+	
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<script src="./script.js"></script>
+
+</body>
+
+</html>
